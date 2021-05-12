@@ -1,0 +1,98 @@
+* {padding: 0; margin: 0;  border: 0;}
+html {font-size: 20px; scroll-behavior: smooth;}
+body {font-size: 1rem; color: #00231c; line-height: 1.4; font-family: "Baton Turbo"; font-weight: normal; overflow: hidden; background-color: #f0efe9;}
+a {text-decoration: none; color: #00231c;}
+ul, ol {list-style-type: none;}
+p {margin-bottom: 1.4em;}
+br {margin:0 !important;}
+
+
+/* HEADERS */
+h1,h2,h3,h4 {margin-bottom: 0.25rem}
+section { position: relative;}
+
+figure img {user-select: none;}
+
+body.landing {overscroll-behavior-y: none;}
+
+.landing header,
+.landing main { max-width: 120rem; margin: 0 auto; ;left: 0; right: 0;}
+
+.landing header { width: 100%; height: 100vh;position: fixed; z-index: 1; pointer-events: none;}
+.landing header > * {text-transform: uppercase; font-family: "Baton Turbo Book"; font-weight: normal; font-size: 2rem; line-height: 1; margin: 3rem; position: absolute; transition: 500ms ease;}
+.landing header > svg {width: 50%; max-width: 20rem; top: 0; left: 0;}
+.landing header > h1 {top: 0; right: 0; text-align: right;}
+.landing header > h2 {bottom: 0; left: 0;}
+.landing header > time {bottom: 0; right: 0; text-align: right;}
+
+.landing header.white { color: #f0efe9;}
+.landing header.white > svg .cls-1{fill: #f0efe9; transition: 500ms ease;} 
+
+section.landing {width: 100%; height: 100vh; scroll-snap-type: y mandatory; overflow: scroll;   -ms-overflow-style: none;  /* IE and Edge */ scrollbar-width: none;  /* Firefox */}
+section.landing.example::-webkit-scrollbar { display: none; }
+
+section.landing figure { position: relative; width: 100%; height: 100%;  scroll-snap-align: center;}
+section.landing figure.half img {width: 61%; height: 61%; top: 19.5%; left: 19.5%;}
+section.landing figure img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+section.landing .content {position: fixed; top: 50%; transform: translateY(-50%); z-index: 3;  text-align: center; width: calc(100% - 2rem); max-width: 60rem; margin: 0 auto; left: 0; right: 0; color: #f0efe9; line-height: 1.2; pointer-events: none;}
+section.landing .content p {margin-bottom: 0;}
+section.landing .content a {background: #54cf9e; text-transform: uppercase; color: #f0efe9; padding: 0.35rem 2.2rem 0.15rem 2.2rem; display: inline-block; border-radius: 2rem; margin-top: 0.2rem; pointer-events: all;}
+
+section.landing article { transition: 250ms ease;  pointer-events: none;}
+section.landing .bottom {opacity: 0; pointer-events: none; visibility: hidden; position: absolute; text-transform: uppercase; top: 0; left: 0; right: 0; margin: 0 auto; }
+section.landing .bottom p {font-size: 2rem;}
+section.landing .bottom a {margin-top: 1rem;}
+
+section.landing img.veeg {position: fixed; z-index: -1; width: 100%; left: 0; right: 0; margin: 0 auto; top: 50%; transform: translateY(-75%); opacity: 0; transition: 500ms ease;}
+.s1 section.landing img.veeg  {opacity: 1;}
+
+.s1 section.landing .top {opacity: 0; pointer-events: none; visibility: hidden;}
+.s1 section.landing .bottom {opacity: 1; visibility: visible;}
+.s1 section.landing .bottom p {font-size: 2rem; }
+
+.s1.landing header.white { color: #00231c;}
+.s1.landing header.white > svg .cls-1{fill: #00231c} 
+
+.s2 section.landing .top {opacity: 0; pointer-events: none; visibility: hidden;}
+.s2 section.landing .bottom {opacity: 1; visibility: visible; transform: translateY(80%); transition: 1s;}
+
+
+@media only screen and (max-width: 1250px) {
+    .landing header > * { font-size: 3.2vw; transition: color 500ms; margin: 1.5rem;}
+    .landing header > svg {width: 30%;}
+
+    .s1 section.landing .top { display: none; }
+    .s1 section.landing .bottom {transform: translateY(-75%);}
+    .s1 section.landing .bottom p { font-size: 3.2vw;}
+    .s1 section.landing img.veeg {transform: translateY(-80%); top: -0.5rem;}
+}
+
+@media only screen and (max-width: 800px) {
+    .s1 section.landing img.veeg { top: -1rem;}
+
+}
+
+@media only screen and (max-width: 500px) {
+    section.landing .bottom p span {opacity: 0; transition: 0s;}
+
+    .landing header > * { font-size: 4.2vw}
+    section.landing .content { font-size: 0.7rem;}
+    section.landing .content p {margin-bottom: 0.5rem;}
+    section.landing figure.half img {width: 81%; height: 71%; top: 12%; left: 9.5%;}
+
+    .s1 section.landing .bottom p,
+    .s2 section.landing .bottom p {display: flex; flex-direction: column; font-size: 2rem;}
+    
+
+    .s1 section.landing .bottom p span,
+    .s2 section.landing .bottom p span {opacity: 0; transition: 0s; height: 0;}
+
+    .s1 section.landing .bottom p span.stay,
+    .s2 section.landing .bottom p span.stay {opacity: 1; height: 100%;}
+
+    .s1 section.landing img.veeg,
+    .s2 section.landing img.veeg {display: none;}
+
+    .s2 section.landing .bottom { transform: translateY(0%); }
+}
